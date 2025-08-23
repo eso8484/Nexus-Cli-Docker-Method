@@ -54,6 +54,13 @@ services:
 git clone https://github.com/eso8484/Nexus-Cli-Docker-Method.git
 cd Nexus-Cli-Docker-Method
 ```
+### Pre-Req
+
+1(a). **Download Nexus CLI**:
+```bash
+curl https://cli.nexus.xyz/ | sh
+source ~/.bashrc
+```
 
 2. **Build and start the containers**:
 
