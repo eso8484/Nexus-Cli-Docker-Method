@@ -51,8 +51,8 @@ services:
 1. **Clone the repository**:
 
 ```bash
-git clone <repository-url>
-cd Nexus
+git clone https://github.com/eso8484/Nexus-Cli-Docker-Method.git
+cd Nexus-Cli-Docker-Method
 ```
 
 2. **Build and start the containers**:
