@@ -33,17 +33,17 @@ services:
   nexus-cli-1:
     build: .
     container_name: nexus-cli-1
-    command: ["start", "--headless", "--node-id", "25616471"]
+    command: ["start", "--headless", "--node-id", "replace-with-your-node-id-1"]
 
   nexus-cli-2:
     build: .
     container_name: nexus-cli-2
-    command: ["start", "--headless", "--node-id", "25723774"]
+    command: ["start", "--headless", "--node-id", "replace-with-your-node-id-2"]
 
   nexus-cli-3:
     build: .
     container_name: nexus-cli-3
-    command: ["start", "--headless", "--node-id", "32445356"]
+    command: ["start", "--headless", "--node-id", "replace-with-your-node-id-3"]
 ```
 
 ## Usage
