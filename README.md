@@ -30,22 +30,54 @@ ENTRYPOINT ["/root/.nexus/bin/nexus-cli"]
 
 ```yaml
 services:
-  nexus-cli-1:
-    build: .
-    container_name: nexus-cli-1
-    command: ["start", "--headless", "--node-id", "replace-with-your-node-id-1"]
+     nexus-cli-1:
+       build: .
+       container_name: nexus-cli-1
+       command: ["start", "--headless", "--node-id", "Replace with actual Node ID"]
 
-  nexus-cli-2:
-    build: .
-    container_name: nexus-cli-2
-    command: ["start", "--headless", "--node-id", "replace-with-your-node-id-2"]
+     nexus-cli-2:
+       build: .
+       container_name: nexus-cli-2
+       command: ["start", "--headless", "--node-id", "Replace with actual Node ID"]
 
-  nexus-cli-3:
-    build: .
-    container_name: nexus-cli-3
-    command: ["start", "--headless", "--node-id", "replace-with-your-node-id-3"]
+     nexus-cli-3:
+       build: .
+       container_name: nexus-cli-3
+       command: ["start", "--headless", "--node-id", "Replace with actual Node ID"]
+```
+---
+
+## --> Create account
+* Create an account at https://app.nexus.xyz.
+
+* Follow the account linking instructions.
+
+* Your contributions will earn NEX Points.
+
+* Track your progress on the leaderboard.
+
+* Manage all your nodes in one place.
+---
+
+### 1. Install Dependecies
+```bash
+sudo apt update & sudo apt upgrade -y
+sudo apt install screen curl build-essential pkg-config libssl-dev git-all -y
+sudo apt install protobuf-compiler -y
+sudo apt update
+```
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+```bash
+source $HOME/.cargo/env
+```
+```bash
+rustup target add riscv32i-unknown-none-elf
+
 ```
 
+  
 ## Usage
 
 1. **Clone the repository**:
@@ -54,24 +86,22 @@ services:
 git clone https://github.com/eso8484/Nexus-Cli-Docker-Method.git
 cd Nexus-Cli-Docker-Method
 ```
-### Pre-Req
+2. **Build and start the containers**:
+* **Buld**
 
-1(a). **Download Nexus CLI**:
 ```bash
-curl https://cli.nexus.xyz/ | sh
-source ~/.bashrc
+docker-compose build --no-cache
 ```
 Register Node
+- Note: Replace `your-wallet-address` with  your evm wallet address in the next command before you run it
 ```bash
 source ~/.bashrc
-
-nexus-network register-user --wallet-address your-wallet-address
+docker run --rm my_nexus_image /root/.nexus/bin/nexus-cli nexus-network register-user --wallet-address <your-wallet-address>
 ```
 
-2. **Build and start the containers**:
-
+* **Run**
 ```bash
-docker compose up -d --build
+docker compose up -d 
 ```
 
 3. **Check container status**:
