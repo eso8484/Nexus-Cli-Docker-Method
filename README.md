@@ -61,6 +61,12 @@ cd Nexus-Cli-Docker-Method
 curl https://cli.nexus.xyz/ | sh
 source ~/.bashrc
 ```
+Register Node
+```bash
+source ~/.bashrc
+
+nexus-network register-user --wallet-address your-wallet-address
+```
 
 2. **Build and start the containers**:
 
