@@ -75,7 +75,7 @@ sudo docker images
 - Note: Replace `my_nexus_image` and `your-wallet-address` with  your `image name` from step 2(b) above and `evm wallet address` respectively in the next command before you run it
 ```bash
 source ~/.bashrc
-docker run --rm my_nexus_image /root/.nexus/bin/nexus-network register-user --wallet-address <your-wallet-address>
+docker run --rm <my_nexus_image> /root/.nexus/bin/nexus-network register-user --wallet-address <your-wallet-address>
 ```
 
 * **Run**
