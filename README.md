@@ -65,13 +65,13 @@ nana docker-compose.yaml
 ```bash
 docker compose build --no-cache
 ```
-2(b). * Check Image name for Nexus
+2(b). **Check Image name for Nexus**
 ```bash
 sudo docker images
 ```
 ---
 
-Register Node
+**Register Node**
 - Note: Replace `my_nexus_image` and `your-wallet-address` with  your `image name` from step 2(b) above and `evm wallet address` respectively in the next command before you run it
 ```bash
 source ~/.bashrc
