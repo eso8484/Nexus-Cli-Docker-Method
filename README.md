@@ -57,7 +57,7 @@ cd Nexus-Cli-Docker-Method
 ```bash
 nana docker-compose.yaml
 ```
-* Replace `Replace with actual Node ID` with your `node-ID` from the site then press `ctrl + o`, hit enter, then `ctrl + x`.
+* Replace `Replace-with-actual-Node-ID` with your `node-ID` from the site then press `ctrl + o`, hit enter, then `ctrl + x`.
   
 2. **Build and start the containers**:
 * **Buld**
