@@ -12,39 +12,6 @@ This repository contains a Dockerized setup for running multiple Nexus CLI nodes
 * **Dockerfile**: Builds an Alpine-based image, installs the Nexus CLI using the official installation script.
 * **docker-compose.yaml**: Defines multiple Nexus CLI containers, each running in headless mode with a unique node ID.
 
-## Dockerfile
-
-```dockerfile
-FROM alpine:3.22.0
-
-RUN apk update && \
-    apk add curl && \
-    curl -sSf https://cli.nexus.xyz/ -o install.sh && \
-    chmod +x install.sh && \
-    NONINTERACTIVE=1 ./install.sh
-
-ENTRYPOINT ["/root/.nexus/bin/nexus-cli"]
-```
-
-## docker-compose.yaml
-
-```yaml
-services:
-     nexus-cli-1:
-       build: .
-       container_name: nexus-cli-1
-       command: ["start", "--headless", "--node-id", "Replace with actual Node ID"]
-
-     nexus-cli-2:
-       build: .
-       container_name: nexus-cli-2
-       command: ["start", "--headless", "--node-id", "Replace with actual Node ID"]
-
-     nexus-cli-3:
-       build: .
-       container_name: nexus-cli-3
-       command: ["start", "--headless", "--node-id", "Replace with actual Node ID"]
-```
 ---
 
 ## --> Create account
@@ -86,17 +53,29 @@ rustup target add riscv32i-unknown-none-elf
 git clone https://github.com/eso8484/Nexus-Cli-Docker-Method.git
 cd Nexus-Cli-Docker-Method
 ```
+1(a). 
+```bash
+nana docker-compose.yaml
+```
+* Replace `Replace with actual Node ID` with your `node-ID` from the site then press `ctrl + o`, hit enter, then `ctrl + x`.
+  
 2. **Build and start the containers**:
 * **Buld**
 
 ```bash
-docker-compose build --no-cache
+docker compose build --no-cache
 ```
+* Check Image
+```bash
+sudo docker images
+```
+---
+
 Register Node
-- Note: Replace `your-wallet-address` with  your evm wallet address in the next command before you run it
+- Note: Replace `my_nexus_image` and `your-wallet-address` with  your image and evm wallet address respectively in the next command before you run it
 ```bash
 source ~/.bashrc
-docker run --rm my_nexus_image /root/.nexus/bin/nexus-cli nexus-network register-user --wallet-address <your-wallet-address>
+docker run --rm my_nexus_image /root/.nexus/bin/nexus-network register-user --wallet-address <your-wallet-address>
 ```
 
 * **Run**
