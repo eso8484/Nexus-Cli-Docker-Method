@@ -60,19 +60,19 @@ nana docker-compose.yaml
 * Replace `Replace-with-actual-Node-ID` with your `node-ID` from the site then press `ctrl + o`, hit enter, then `ctrl + x`.
   
 2. **Build and start the containers**:
-* **Buld**
+2(a). * **Buld**
 
 ```bash
 docker compose build --no-cache
 ```
-* Check Image
+2(b). * Check Image name for Nexus
 ```bash
 sudo docker images
 ```
 ---
 
 Register Node
-- Note: Replace `my_nexus_image` and `your-wallet-address` with  your image and evm wallet address respectively in the next command before you run it
+- Note: Replace `my_nexus_image` and `your-wallet-address` with  your `image name` from step 2(b) above and `evm wallet address` respectively in the next command before you run it
 ```bash
 source ~/.bashrc
 docker run --rm my_nexus_image /root/.nexus/bin/nexus-network register-user --wallet-address <your-wallet-address>
