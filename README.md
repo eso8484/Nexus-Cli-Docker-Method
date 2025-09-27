@@ -55,7 +55,7 @@ cd Nexus-Cli-Docker-Method
 ```
 1(a). 
 ```bash
-nana docker-compose.yaml
+nano docker-compose.yaml
 ```
 * Replace `Replace-with-actual-Node-ID` with your `node-ID` from the site then press `ctrl + o`, hit enter, then `ctrl + x`.
   
